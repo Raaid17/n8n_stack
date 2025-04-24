@@ -1,1 +1,12 @@
+version: '3.8'  # ← Top-level key-value
 
+services:       # ← Another top-level key
+  n8n:
+    image: n8nio/n8n:latest
+    ports:
+      - "5678:5678"
+    volumes:
+      - n8n_data:/home/node/.n8n
+
+volumes:        # ← Another top-level key
+  n8n_data:
